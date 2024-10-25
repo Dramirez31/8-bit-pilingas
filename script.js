@@ -86,10 +86,11 @@ function startGame() {
 
         // Gravity effect
         if (player.y < 300) {
-            player.velocityY += 1;
+            player.velocityY += 1; // Simular gravedad
         } else {
             player.velocityY = 0;
             player.isJumping = false;
+            player.y = 300; // Asegurar que el jugador regrese a la altura correcta
         }
 
         player.y += player.velocityY;
@@ -105,7 +106,15 @@ function startGame() {
 
     document.addEventListener('keydown', e => {
         if (e.code === 'Space' && !player.isJumping) {
-            player.velocityY = -15;
+            player.velocityY = -15; // Cambia este valor para ajustar la altura del salto
+            player.isJumping = true;
+        }
+    });
+
+    // Evento para tocar la pantalla
+    document.addEventListener('touchstart', e => {
+        if (!player.isJumping) {
+            player.velocityY = -15; // Cambia este valor para ajustar la altura del salto
             player.isJumping = true;
         }
     });
