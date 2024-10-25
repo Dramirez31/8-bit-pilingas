@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+#character-selection {
+    text-align: center;
+}
+
+.character {
+    cursor: pointer;
+    background-color: #444;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.character:hover {
+    background-color: #555;
+}
+
+#game-container {
+    display: none;
+}
+
+canvas {
+    background-color: #222;
+    border: 1px solid #fff;
+}
